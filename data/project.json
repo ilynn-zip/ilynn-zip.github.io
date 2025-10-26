@@ -1,0 +1,286 @@
+{
+    "playico": "/img/icon/play2.svg",
+    "downloadico": "/img/icon/download.svg",
+    "gitico": "/img/icon/github.svg",
+    "itchico": "/img/icon/itch.svg",
+    "project": {
+        "ru": [
+            {
+                "id": "g1",
+                "title": "Blue chicken (minijam 97)",
+                "desc": "Простенький платформер, с механикой рокетджампа, был сделан для миниджема.",
+                "image": "/img/projects/games/blue-chicken.png",
+                "projectLink": [
+                    {
+                        "nid": "play",
+                        "link": "https://ilynn-zip.github.io/blue-chicken/"
+                    },
+                    {
+                        "nid": "source",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "download",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "itch",
+                        "link": "https://ilynn.itch.io/blue-chicken-minijam97",
+                        "disabled": true
+                    }
+                ]
+            },
+            {
+                "id": "g2",
+                "title": "Copy TV (minijam 111)",
+                "desc": "Платформер головоломка про ТВ-челвечка.",
+                "image": "/img/projects/games/copy-tv.png",
+                "projectLink": [
+                    {
+                        "nid": "play",
+                        "link": "https://ilynn-zip.github.io/copygamedeploy"
+                    },
+                    {
+                        "nid": "source",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "download",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "itch",
+                        "link": "https://ilynn.itch.io/copy-tv-minijam-111",
+                        "disabled": true
+                    }
+                ]
+            },
+            {
+                "id": "g3",
+                "title": "Runeshot (minijam 149)",
+                "desc": "Руны, нанесённые на пули, — ваше оружие. Станьте настоящим мастером runeshot!",
+                "image": "/img/projects/games/runeshot.png",
+                "projectLink": [
+                    {
+                        "nid": "play",
+                        "link": "https://ilynn.itch.io/runeshot"
+                    },
+                    {
+                        "nid": "source",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "download",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "itch",
+                        "link": "https://ilynn.itch.io/runeshot",
+                        "disabled": true,
+                        "hidden": true
+                    }
+                ]
+            },
+            {
+                "id": "g4",
+                "title": "Color's Formula",
+                "desc": "Цветовая головолмка. Попробуй подобрать исходный цвет, смешивая разные оттенки.",
+                "image": "/img/projects/games/colors-formula.png",
+                "projectLink": [
+                    {
+                        "nid": "play",
+                        "link": "https://ilynn.itch.io/colors-formula"
+                    },
+                    {
+                        "nid": "source",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "download",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "itch",
+                        "link": "https://ilynn.itch.io/colors-formula",
+                        "disabled": true,
+                        "hidden": true
+                    }
+                ]
+            },
+            {
+                "id": "g5",
+                "title": "Pill pigments",
+                "desc": "Ваша задача: раскрасить хаос в один цвет, усмирив внутренних демонов.",
+                "image": "/img/projects/games/pill-pigments.png",
+                "projectLink": [
+                    {
+                        "nid": "play",
+                        "link": "https://ilynn.itch.io/pill-pigments"
+                    },
+                    {
+                        "nid": "source",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "download",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "itch",
+                        "link": "https://ilynn.itch.io/pill-pigments",
+                        "disabled": true,
+                        "hidden": true
+                    }
+                ]
+            }
+        ],
+        "en": [
+            {
+                "id": "g1",
+                "title": "Blue chicken (minijam 97)",
+                "desc": "A simple platformer with rocket jump mechanics was made for the MiniJam.",
+                "image": "/img/projects/games/blue-chicken.png",
+                "projectLink": [
+                    {
+                        "nid": "play",
+                        "link": "https://ilynn-zip.github.io/blue-chicken/"
+                    },
+                    {
+                        "nid": "source",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "download",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "itch",
+                        "link": "https://ilynn.itch.io/blue-chicken-minijam97"
+                    }
+                ]
+            },
+            {
+                "id": "g2",
+                "title": "Copy TV (minijam 111)",
+                "desc": "A platformer puzzle game about a TV-dude.",
+                "image": "/img/projects/games/copy-tv.png",
+                "projectLink": [
+                    {
+                        "nid": "play",
+                        "link": "https://ilynn-zip.github.io/copygamedeploy"
+                    },
+                    {
+                        "nid": "source",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "download",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "itch",
+                        "link": "https://ilynn.itch.io/copy-tv-minijam-111"
+                    }
+                ]
+            },
+            {
+                "id": "g3",
+                "title": "Runeshot (minijam 149)",
+                "desc": "The runes marked on the bullets are your weapon. Become a true Runeshot master!",
+                "image": "/img/projects/games/runeshot.png",
+                "projectLink": [
+                    {
+                        "nid": "play",
+                        "link": "https://ilynn.itch.io/runeshot"
+                    },
+                    {
+                        "nid": "source",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "download",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "itch",
+                        "link": "https://ilynn.itch.io/runeshot",
+                        "disabled": true,
+                        "hidden": true
+                    }
+                ]
+            },
+            {
+                "id": "g4",
+                "title": "Color's Formula",
+                "desc": "Color puzzle. Try to match the original color by mixing different shades.",
+                "image": "/img/projects/games/colors-formula.png",
+                "projectLink": [
+                    {
+                        "nid": "play",
+                        "link": "https://ilynn.itch.io/colors-formula"
+                    },
+                    {
+                        "nid": "source",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "download",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "itch",
+                        "link": "https://ilynn.itch.io/colors-formula",
+                        "disabled": true,
+                        "hidden": true
+                    }
+                ]
+            },
+            {
+                "id": "g5",
+                "title": "Pill pigments",
+                "desc": "Your task: to paint the chaos in a single color, pacifying the inner demons.",
+                "image": "/img/projects/games/pill-pigments.png",
+                "projectLink": [
+                    {
+                        "nid": "play",
+                        "link": "https://ilynn.itch.io/pill-pigments"
+                    },
+                    {
+                        "nid": "source",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "download",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "itch",
+                        "link": "https://ilynn.itch.io/pill-pigments",
+                        "disabled": true,
+                        "hidden": true
+                    }
+                ]
+            }
+        ]
+    }
+}

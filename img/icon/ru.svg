@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 473 473" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;">
+    <g transform="matrix(1,0,0,1,-236.22,-236.22)">
+        <g transform="matrix(1,0,0,1,-472.441,-1889.76)">
+            <circle cx="944.882" cy="2362.2" r="236.22" style="fill:rgb(235,235,235);"/>
+            <clipPath id="_clip1">
+                <circle cx="944.882" cy="2362.2" r="236.22"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g id="flag-ru-svgrepo-com.svg" transform="matrix(0.885827,0,0,0.885827,944.882,2362.2)">
+                    <g transform="matrix(1,0,0,1,-400,-400)">
+                        <clipPath id="_clip2">
+                            <rect x="0" y="0" width="800" height="800"/>
+                        </clipPath>
+                        <g clip-path="url(#_clip2)">
+                            <g>
+                                <clipPath id="_clip3">
+                                    <path d="M800,171.429L800,628.571C800,660.109 774.395,685.714 742.857,685.714L57.143,685.714C25.605,685.714 0,660.109 0,628.571L0,171.429C0,139.891 25.605,114.286 57.143,114.286L742.857,114.286C774.395,114.286 800,139.891 800,171.429Z"/>
+                                </clipPath>
+                                <g clip-path="url(#_clip3)">
+                                    <path d="M792.857,171.429L792.857,628.571C792.857,656.167 770.453,678.571 742.857,678.571L57.143,678.571C29.547,678.571 7.143,656.167 7.143,628.571L7.143,171.429C7.143,143.833 29.547,121.429 57.143,121.429L742.857,121.429C770.453,121.429 792.857,143.833 792.857,171.429Z" style="fill:white;stroke:rgb(245,245,245);stroke-width:14.29px;"/>
+                                    <g>
+                                        <rect x="0" y="304.762" width="800" height="190.475" style="fill:rgb(12,71,183);"/>
+                                        <rect x="0" y="495.237" width="800" height="190.477" style="fill:rgb(229,59,53);"/>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

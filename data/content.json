@@ -1,0 +1,181 @@
+{
+  "ru": {
+    "copyright": "© 2025 Ilynn. Все права защищены.",
+    "tabs": [
+      {
+        "id": "about",
+        "title": "Это я, да",
+        "icon": "/img/icon/about.svg"
+      },
+      {
+        "id": "projects",
+        "title": "Проджектс",
+        "icon": "/img/icon/joystick.svg"
+      },
+      {
+        "id": "coming",
+        "title": "Скоро, или нет",
+        "icon": "/img/icon/question.svg",
+        "disabled": true
+      }
+    ],
+    "about": {
+      "title": "Привет! Я Виктор Ilynn",
+      "text": "Это моя игровая лаборатория. Здесь я создаю миры, изобретаю механику и экспериментирую с визуалом. Просто потому что могу и люблю это делать.",
+      "find": "Найдешь меня здесь ↷",
+      "photo": "/img/ilynn.png",
+      "socials": [
+        {
+          "name": "GitHub",
+          "icon": "/img/icon/github.svg",
+          "link": "https://github.com/ilynn-zip"
+        },
+        {
+          "name": "Itch.io",
+          "icon": "/img/icon/itch.svg",
+          "link": "https://ilynn.itch.io/",
+          "disabled": true,
+          "tooltip": "ркн запрещает лол"
+        },
+        {
+          "name": "Telegram",
+          "icon": "/img/icon/telegram.svg",
+          "link": "https://t.me/nepridumivay"
+        }
+      ],
+      "featuredTitle": "Из недавнего",
+      "featured": [
+        {
+          "id": "g4",
+          "title": "Color's Formula",
+          "desc": "Цветовая головолмка. Попробуй подобрать исходный цвет, смешивая разные оттенки.",
+          "image": "/img/projects/games/colors-formula.png",
+          "link": "https://ilynn.itch.io/colors-formula"
+        },
+        {
+          "id": "g5",
+          "title": "Pill pigments",
+          "desc": "Ваша задача: раскрасить хаос в один цвет, усмирив внутренних демонов.",
+          "image": "/img/projects/games/pill-pigments.png",
+          "link": "https://ilynn.itch.io/pill-pigments"
+        }
+      ]
+    },
+    "projectsTitle": "Здесь что доделал до конца, почти",
+    "projectLink": [
+      {
+        "nid": "play",
+        "name": "Играть",
+        "icon": "/img/icon/play2.svg",
+        "link": ""
+      },
+      {
+        "nid": "source",
+        "name": "Исходники",
+        "icon": "/img/icon/github.svg",
+        "link": ""
+      },
+      {
+        "nid": "download",
+        "name": "Скачать",
+        "icon": "/img/icon/download.svg",
+        "link": ""
+      },
+      {
+        "nid": "itch",
+        "name": "Itch",
+        "icon": "/img/icon/itch.svg",
+        "link": ""
+      }
+    ]
+  },
+  "en": {
+    "copyright": "© 2025 Ilynn. All rights reserved.",
+    "tabs": [
+      {
+        "id": "about",
+        "title": "That's me",
+        "icon": "img/icon/about.svg"
+      },
+      {
+        "id": "projects",
+        "title": "Mah projects",
+        "icon": "/img/icon/joystick.svg"
+      },
+      {
+        "id": "coming",
+        "title": "Soon, or not",
+        "icon": "/img/icon/question.svg",
+        "disabled": true
+      }
+    ],
+    "about": {
+      "title": "Hi there! I'm Victor Ilynn",
+      "text": "This is my gaming lab. Here I create worlds, invent mechanics, and experiment with visuals. Simply because I can and love doing it.",
+      "find": "You will find me here ↷",
+      "photo": "img/ilynn.png",
+      "socials": [
+        {
+          "name": "GitHub",
+          "icon": "img/icon/github.svg",
+          "link": "https://github.com/ilynn-zip"
+        },
+        {
+          "name": "Itch.io",
+          "icon": "img/icon/itch.svg",
+          "link": "https://ilynn.itch.io/",
+          "disabled": false
+        },
+        {
+          "name": "Telegram",
+          "icon": "img/icon/telegram.svg",
+          "link": "https://t.me/nepridumivay"
+        }
+      ],
+      "featuredTitle": "Recents",
+      "featured": [
+        {
+          "id": "g4",
+          "title": "Color's Formula",
+          "desc": "Color puzzle. Try to match the original color by mixing different shades.",
+          "image": "/img/projects/games/colors-formula.png",
+          "link": "https://ilynn.itch.io/colors-formula"
+        },
+        {
+          "id": "g5",
+          "title": "Pill pigments",
+          "desc": "Your task: to paint the chaos in a single color, pacifying the inner demons.",
+          "image": "/img/projects/games/pill-pigments.png",
+          "link": "https://ilynn.itch.io/pill-pigments"
+        }
+      ]
+    },
+    "projectsTitle": "Here is what I finished, almost",
+    "projectLink": [
+      {
+        "nid": "play",
+        "name": "Play",
+        "icon": "/img/icon/play2.svg",
+        "link": ""
+      },
+      {
+        "nid": "source",
+        "name": "Sources",
+        "icon": "/img/icon/github.svg",
+        "link": ""
+      },
+      {
+        "nid": "download",
+        "name": "Download",
+        "icon": "/img/icon/download.svg",
+        "link": ""
+      },
+      {
+        "nid": "itch",
+        "name": "on Itch",
+        "icon": "/img/icon/itch.svg",
+        "link": ""
+      }
+    ]
+  }
+}

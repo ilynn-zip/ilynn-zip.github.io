@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <title>Ilynn. Me. Dev.</title>
+    <link rel="icon" type="image/svg+xml" href="img/icon/ilynn.svg" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="dark">
+    <div id="preloader">
+        <div class="loader">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="wrapper">
+        <div class="center-block">
+            <div class="controls">
+                <button id="theme-toggle"><img src="img/icon/sun.svg" alt="theme" /></button>
+                <div class="lang-selector">
+                    <button button id="lang-toggle" class="lang-toggle">
+                        <img src="img/icon/lang.svg" alt="EN" />
+                    </button>
+                    <ul class="lang-menu">
+                        <li data-lang="en"><img src="img/icon/en.svg" alt="EN" /></li>
+                        <li data-lang="ru"><img src="img/icon/ru.svg" alt="RU" /></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="tabs" id="tabs"></div>
+            <main class="main">
+                <div class="tab-wrapper" id="tab-wrapper">
+                </div>
+            </main>
+        </div>
+
+        <footer>
+            <p id="copyright">© 2025 Ilynn. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="js/bg.js"></script>
+    <script src="js/content.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/lang.js"></script>
+
+</body>
+
+</html>
