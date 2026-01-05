@@ -28,19 +28,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 function switchLang(lang) {
-    fetch('/data/content.json')
+    fetch(`/data/content_${lang}.json`)
         .then(res => res.json())
         .then(data => {
-            const d = data[lang];
+            const d = data;
 
-            document.getElementById("copyright").innerHTML = `${d.copyright}`;
+            document.getElementById("copyright-text").innerHTML = `${d.copyright}`;
 
             d.tabs.forEach(tab => {
                 const span = document.querySelector(`[data-l10n="tab-${tab.id}-title"]`);
                 if (span) span.textContent = tab.title;
             });
 
-            document.querySelector('[data-l10n="bubble"]').textContent = d.about.buble;
+            //document.querySelector('[data-l10n="bubble"]').textContent = d.about.buble;
 
             d.about.socials.forEach(s => {
                 const linkEl = document.querySelector(`[data-social="${s.name.toLowerCase()}"]`);
@@ -85,10 +85,10 @@ function switchLang(lang) {
 }
 
 function updateProjects(lang) {
-    fetch('/data/project.json')
+    fetch(`/data/project_${lang}.json`)
         .then(res => res.json())
         .then(data => {
-            const pdata = data.project[lang];
+            const pdata = data.project;
 
             pdata.forEach(p => {
                 const spanTitle = document.querySelector(`[data-l10n="project-${p.id}-title"]`);

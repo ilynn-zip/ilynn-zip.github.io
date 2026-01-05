@@ -1,5 +1,7 @@
 let currentLang = localStorage.getItem("lang") || detectLang();
 
+document.getElementById('current-year').textContent = new Date().getFullYear();
+
 document.addEventListener("DOMContentLoaded", () => {
   loadContent(currentLang);
 
@@ -19,12 +21,12 @@ function detectLang() {
 }
 
 function loadContent(lang) {
-  fetch("/data/content.json")
+  fetch(`/data/content_${lang}.json`)
     .then((res) => res.json())
     .then((data) => {
-      const d = data[lang];
+      const d = data;
 
-      document.getElementById("copyright").innerHTML = `${d.copyright}`;
+      document.getElementById("copyright-text").innerHTML = `${d.copyright}`;
 
       // === TABS ===
       const tabs = document.getElementById("tabs");
@@ -152,10 +154,10 @@ function loadContent(lang) {
 }
 
 function loadProjects(lang, d) {
-  fetch("/data/project.json")
+  fetch(`/data/project_${lang}.json`)
     .then(res => res.json())
     .then(projectData => {
-      const projects = projectData.project[lang] || [];
+      const projects = projectData.project || [];
       const linkico = projectData.playico;
       const container = document.getElementById("projects");
 

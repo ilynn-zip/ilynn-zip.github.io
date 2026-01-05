@@ -1,0 +1,174 @@
+{
+    "playico": "/img/icon/play2.svg",
+    "downloadico": "/img/icon/download.svg",
+    "gitico": "/img/icon/github.svg",
+    "itchico": "/img/icon/itch.svg",
+    "project": [
+        {
+            "id": "g1",
+            "title": "Blue chicken (minijam 97)",
+            "desc": "Простенький платформер, с механикой рокетджампа, был сделан для миниджема.",
+            "image": "/img/projects/games/blue-chicken.png",
+            "projectLink": [
+                {
+                    "nid": "play",
+                    "link": "https://ilynn-zip.github.io/blue-chicken/"
+                },
+                {
+                    "nid": "source",
+                    "link": "#",
+                    "hidden": true
+                },
+                {
+                    "nid": "download",
+                    "link": "#",
+                    "hidden": true
+                },
+                {
+                    "nid": "itch",
+                    "link": "https://ilynn.itch.io/blue-chicken-minijam97",
+                    "disabled": true
+                }
+            ]
+        },
+        {
+            "id": "g2",
+            "title": "Copy TV (minijam 111)",
+            "desc": "Платформер головоломка про ТВ-челвечка.",
+            "image": "/img/projects/games/copy-tv.png",
+            "projectLink": [
+                {
+                    "nid": "play",
+                    "link": "https://ilynn-zip.github.io/copygamedeploy"
+                },
+                {
+                    "nid": "source",
+                    "link": "#",
+                    "hidden": true
+                },
+                {
+                    "nid": "download",
+                    "link": "#",
+                    "hidden": true
+                },
+                {
+                    "nid": "itch",
+                    "link": "https://ilynn.itch.io/copy-tv-minijam-111",
+                    "disabled": true
+                }
+            ]
+        },
+        {
+            "id": "g3",
+            "title": "Runeshot (minijam 149)",
+            "desc": "Руны, нанесённые на пули, — ваше оружие. Станьте настоящим мастером runeshot!",
+            "image": "/img/projects/games/runeshot.png",
+            "projectLink": [
+                {
+                    "nid": "play",
+                    "link": "https://ilynn.itch.io/runeshot"
+                },
+                {
+                    "nid": "source",
+                    "link": "#",
+                    "hidden": true
+                },
+                {
+                    "nid": "download",
+                    "link": "#",
+                    "hidden": true
+                },
+                {
+                    "nid": "itch",
+                    "link": "https://ilynn.itch.io/runeshot",
+                    "disabled": true,
+                    "hidden": true
+                }
+            ]
+        },
+        {
+            "id": "g4",
+            "title": "Color's Formula",
+            "desc": "Цветовая головолмка. Попробуй подобрать исходный цвет, смешивая разные оттенки.",
+            "image": "/img/projects/games/colors-formula.png",
+            "projectLink": [
+                {
+                    "nid": "play",
+                    "link": "https://ilynn.itch.io/colors-formula"
+                },
+                {
+                    "nid": "source",
+                    "link": "#",
+                    "hidden": true
+                },
+                {
+                    "nid": "download",
+                    "link": "#",
+                    "hidden": true
+                },
+                {
+                    "nid": "itch",
+                    "link": "https://ilynn.itch.io/colors-formula",
+                    "disabled": true,
+                    "hidden": true
+                }
+            ]
+        },
+        {
+            "id": "g5",
+            "title": "Pill pigments",
+            "desc": "Ваша задача: раскрасить хаос в один цвет, усмирив внутренних демонов.",
+            "image": "/img/projects/games/pill-pigments.png",
+            "projectLink": [
+                {
+                    "nid": "play",
+                    "link": "https://ilynn.itch.io/pill-pigments"
+                },
+                {
+                    "nid": "source",
+                    "link": "#",
+                    "hidden": true
+                },
+                {
+                    "nid": "download",
+                    "link": "#",
+                    "hidden": true
+                },
+                {
+                    "nid": "itch",
+                    "link": "https://ilynn.itch.io/pill-pigments",
+                    "disabled": true,
+                    "hidden": true
+                }
+            ]
+        },
+        {
+            "id": "g6",
+            "title": "Generic Horror .1 Demo",
+            "desc": "Короткий хоррор о долге.",
+            "image": "/img/projects/games/generic-horror.png",
+            "projectLink": [
+                {
+                    "nid": "play",
+                    "link": "https://ilynn.itch.io/generic-horror-1"
+                },
+                {
+                    "nid": "source",
+                    "link": "#",
+                    "hidden": true
+                },
+                {
+                    "nid": "download",
+                    "link": "#",
+                    "hidden": true
+                },
+                {
+                    "nid": "itch",
+                    "link": "https://ilynn.itch.io/generic-horror-1",
+                    "disabled": true,
+                    "hidden": true
+                }
+            ]
+        }
+    ]
+}

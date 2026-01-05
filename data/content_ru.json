@@ -1,0 +1,90 @@
+{
+  "copyright": "Ilynn. Все права защищены.",
+  "tabs": [
+    {
+      "id": "about",
+      "title": "Это я, да",
+      "icon": "/img/icon/about.svg"
+    },
+    {
+      "id": "projects",
+      "title": "Проджектс",
+      "icon": "/img/icon/joystick.svg"
+    },
+    {
+      "id": "coming",
+      "title": "Скоро, или нет",
+      "icon": "/img/icon/question.svg",
+      "disabled": true
+    }
+  ],
+  "about": {
+    "title": "Привет! Я Виктор Ilynn",
+    "text": "Это моя игровая лаборатория. Здесь я создаю миры, изобретаю механику и экспериментирую с визуалом. Просто потому что могу и люблю это делать.",
+    "find": "Найдешь меня здесь ↷",
+    "photo": "/img/ilynn.png",
+    "socials": [
+      {
+        "name": "GitHub",
+        "icon": "/img/icon/github.svg",
+        "link": "https://github.com/ilynn-zip"
+      },
+      {
+        "name": "Itch.io",
+        "icon": "/img/icon/itch.svg",
+        "link": "https://ilynn.itch.io/",
+        "disabled": true,
+        "tooltip": "ркн запрещает лол"
+      },
+      {
+        "name": "Telegram",
+        "icon": "/img/icon/telegram.svg",
+        "link": "https://t.me/nepridumivay"
+      }
+    ],
+    "featuredTitle": "Из недавнего",
+    "featured": [
+      {
+        "id": "g5",
+        "title": "Pill pigments",
+        "desc": "Ваша задача: раскрасить хаос в один цвет, усмирив внутренних демонов.",
+        "image": "/img/projects/games/pill-pigments.png",
+        "link": "https://ilynn.itch.io/pill-pigments"
+      },
+      {
+        "id": "g6",
+        "title": "Generic Horror .1 Demo",
+        "desc": "Короткий хоррор о долге.",
+        "image": "/img/projects/games/generic-horror.png",
+        "link": "https://ilynn.itch.io/generic-horror-1"
+      }
+    ]
+  },
+  "projectsTitle": "Здесь что доделал до конца, почти",
+  "projectLink": [
+    {
+      "nid": "play",
+      "name": "Играть",
+      "icon": "/img/icon/play2.svg",
+      "link": ""
+    },
+    {
+      "nid": "source",
+      "name": "Исходники",
+      "icon": "/img/icon/github.svg",
+      "link": ""
+    },
+    {
+      "nid": "download",
+      "name": "Скачать",
+      "icon": "/img/icon/download.svg",
+      "link": ""
+    },
+    {
+      "nid": "itch",
+      "name": "Itch",
+      "icon": "/img/icon/itch.svg",
+      "link": ""
+    }
+  ]
+}
