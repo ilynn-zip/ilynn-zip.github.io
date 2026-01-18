@@ -169,6 +169,34 @@
                     "hidden": true
                 }
             ]
+        },
+        {
+            "id": "g7",
+            "title": "Golden Cave (minijam 202)",
+            "desc": "Защити свои сокровища в роли могучего дракона!",
+            "image": "/img/projects/games/goldencave.png",
+            "projectLink": [
+                {
+                    "nid": "play",
+                    "link": "https://ilynn.itch.io/golden-cave"
+                },
+                {
+                    "nid": "source",
+                    "link": "#",
+                    "hidden": true
+                },
+                {
+                    "nid": "download",
+                    "link": "#",
+                    "hidden": true
+                },
+                {
+                    "nid": "itch",
+                    "link": "https://ilynn.itch.io/golden-cave",
+                    "disabled": true,
+                    "hidden": true
+                }
+            ]
         }
     ]
 }

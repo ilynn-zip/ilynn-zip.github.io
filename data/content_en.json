@@ -44,18 +44,17 @@
     "featuredTitle": "Recents",
     "featured": [
       {
-        "id": "g5",
-        "title": "Pill pigments",
-        "desc": "Your task: to paint the chaos in a single color, pacifying the inner demons.",
-        "image": "/img/projects/games/pill-pigments.png",
-        "link": "https://ilynn.itch.io/pill-pigments"
-      },
-      {
         "id": "g6",
         "title": "Generic Horror .1 Demo",
         "desc": "A short horror about debt.",
         "image": "/img/projects/games/generic-horror.png",
         "link": "https://ilynn.itch.io/generic-horror-1"
+      },
+      {
+        "title": "Golden Cave (minijam 202)",
+        "desc": "Protect your treasure as a mighty dragon!",
+        "image": "/img/projects/games/goldencave.png",
+        "link": "https://ilynn.itch.io/golden-cave"
       }
     ]
   },
