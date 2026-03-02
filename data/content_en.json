@@ -44,16 +44,6 @@
     "featuredTitle": "Recents",
     "featured": [
       {
-<<<<<<< HEAD
-=======
-        "id": "g6",
-        "title": "Generic Horror .1 Demo",
-        "desc": "A short horror about debt.",
-        "image": "/img/projects/games/generic-horror.png",
-        "link": "https://ilynn.itch.io/generic-horror-1"
-      },
-      {
->>>>>>> c2fc4b67a57478ea462951883c54b265c611b75c
         "id": "g7",
         "title": "Golden Cave (minijam 202)",
         "desc": "Protect your treasure as a mighty dragon!",
