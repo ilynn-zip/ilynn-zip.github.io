@@ -195,6 +195,34 @@
                         "hidden": true
                     }
                 ]
+            },
+            {
+                "id": "g8",
+                "title": "resume",
+                "desc": "I'm tired",
+                "image": "/img/projects/games/resume.png",
+                "projectLink": [
+                    {
+                        "nid": "play",
+                        "link": "https://ilynn.itch.io/resume"
+                    },
+                    {
+                        "nid": "source",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "download",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "itch",
+                        "link": "https://ilynn.itch.io/resume",
+                        "disabled": true,
+                        "hidden": true
+                    }
+                ]
             }
         ]
     }

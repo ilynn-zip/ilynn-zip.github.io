@@ -139,13 +139,6 @@ function loadContent(lang) {
           wrapper.style.transition = "height 0.4s ease";
           wrapper.style.height = activeTab.offsetHeight + "px";
 
-          const preloader = document.getElementById("preloader");
-          if (preloader) {
-            preloader.style.opacity = 0;
-            preloader.style.transition = "opacity 0.5s ease";
-            setTimeout(() => preloader.remove(), 500);
-          }
-
           document.dispatchEvent(new Event("contentLoaded"));
         }
       }

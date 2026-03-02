@@ -4,6 +4,13 @@
 
 document.addEventListener("contentLoaded", () => {
     initTabsAndTheme();
+
+    const preloader = document.getElementById("preloader");
+    if (preloader) {
+        preloader.style.opacity = 0;
+        preloader.style.transition = "opacity 0.5s ease";
+        setTimeout(() => preloader.remove(), 500);
+    }
 });
 
 function initTabsAndTheme() {
@@ -12,7 +19,7 @@ function initTabsAndTheme() {
     const themeToggle = document.getElementById("theme-toggle");
 
     let activeTab = "about";
-    let currentLang = localStorage.getItem("lang") || "ru";
+    let currentLang = localStorage.getItem("lang") || "en";
 
     const wrapper = document.querySelector(".tab-wrapper");
     if (!wrapper) return;
@@ -65,13 +72,13 @@ function initTabsAndTheme() {
 }
 
 function updateTabHeight() {
-  const activeTab = document.querySelector('.tab-content.active');
-  const wrapper = document.querySelector(".tab-wrapper");
-  if (activeTab) {
-      const newHeight = activeTab.offsetHeight; 
-      wrapper.style.transition = "height 0.4s ease";
-      wrapper.style.height = `${newHeight}px`;
-  }
+    const activeTab = document.querySelector('.tab-content.active');
+    const wrapper = document.querySelector(".tab-wrapper");
+    if (activeTab) {
+        const newHeight = activeTab.offsetHeight;
+        wrapper.style.transition = "height 0.4s ease";
+        wrapper.style.height = `${newHeight}px`;
+    }
 }
 
 window.addEventListener('resize', updateTabHeight);

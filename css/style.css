@@ -58,9 +58,10 @@ body:not(.dark) #bg-canvas {
     width: 14px;
     height: 14px;
     background: var(--accent);
-    border-radius: 50%;
+    border-radius: 20%;
     animation: pulse 1s ease-in-out infinite;
     box-shadow: 0 0 15px rgba(255, 184, 76, 0.6);
+    opacity: 0.0;
 }
 
 #preloader .dot:nth-child(1) {
@@ -86,15 +87,19 @@ body:not(.dark) #bg-canvas {
 @keyframes pulse {
 
     0%,
-    100% {
-        transform: translateY(0) scale(0.6);
-        opacity: 0.6;
+    100%{
+        transform: translateY(0px) rotate(0deg) scale(0.6);
+        opacity: 0.0;
+        border-radius: 20%;
+    }
+    
+    50% {
+        transform: translateY(-20px) rotate(40deg) scale(1);
+        opacity: 1;
+        border-radius: 50%;
     }
 
-    50% {
-        transform: translateY(-20px) scale(1);
-        opacity: 1;
-    }
+    
 }
 
 #preloader.hide {
