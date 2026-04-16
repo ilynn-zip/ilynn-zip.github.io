@@ -126,13 +126,13 @@ body:not(.dark) #bg-canvas {
 }
 
 .center-block {
-    background: rgba(27, 29, 35, 0.85);
+    background: rgba(27, 29, 35, 0.0);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     position: relative;
     padding: 2em;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(255, 184, 76, 0.3);
+    box-shadow: 0 0 30px rgba(255, 184, 76, 0.3);
     max-width: 1000px;
     min-height: 50vh;
     width: 90%;
@@ -151,8 +151,8 @@ body:not(.dark) {
 }
 
 body:not(.dark) .center-block {
-    background: rgba(233, 236, 239, 0.85);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    background: rgba(233, 236, 239, 0.0);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
     color: var(--text-dark);
 }
 

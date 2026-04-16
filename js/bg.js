@@ -19,7 +19,7 @@
         particles.forEach(p => {
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-            ctx.fillStyle = document.body.classList.contains('dark') ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.1)';
+            ctx.fillStyle = document.body.classList.contains('dark') ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.2)';
             ctx.fill();
             p.x += p.dx; p.y += p.dy;
             if (p.x > width) p.x = 0;
