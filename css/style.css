@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 :root {
     --bg-light: #F5F6F7;
     --bg-dark: #1B1D23;
@@ -8,6 +14,7 @@
     --accent-hover: #FFD477;
 }
 
+
 body,
 html {
     margin: 0;
@@ -15,6 +22,7 @@ html {
     font-family: 'Inter', sans-serif;
     color: var(--text-dark);
     transition: color 0.4s, background 0.4s;
+    -webkit-font-smoothing: antialiased;
 }
 
 body.dark {
@@ -36,6 +44,7 @@ body:not(.dark) #bg-canvas {
     background: var(--bg-light);
 }
 
+/* === ПРЕЛОАДЕР === */
 #preloader {
     position: fixed;
     top: 0;
@@ -47,6 +56,7 @@ body:not(.dark) #bg-canvas {
     justify-content: center;
     align-items: center;
     z-index: 9999;
+    pointer-events: none;
 }
 
 #preloader .loader {
@@ -61,7 +71,8 @@ body:not(.dark) #bg-canvas {
     border-radius: 20%;
     animation: pulse 1s ease-in-out infinite;
     box-shadow: 0 0 15px rgba(255, 184, 76, 0.6);
-    opacity: 0.0;
+    opacity: 0;
+    transform: translateY(0) rotate(0deg) scale(0.6);
 }
 
 #preloader .dot:nth-child(1) {
@@ -87,26 +98,27 @@ body:not(.dark) #bg-canvas {
 @keyframes pulse {
 
     0%,
-    100%{
+    100% {
         transform: translateY(0px) rotate(0deg) scale(0.6);
-        opacity: 0.0;
+        opacity: 0;
         border-radius: 20%;
     }
-    
+
     50% {
         transform: translateY(-20px) rotate(40deg) scale(1);
         opacity: 1;
         border-radius: 50%;
     }
-
-    
 }
 
 #preloader.hide {
     opacity: 0;
-    transition: opacity 0.5s ease;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0s 0.5s;
+    pointer-events: none;
 }
 
+/* === ОСНОВНАЯ ОБЁРТКА === */
 .wrapper {
     display: block;
     padding: 2em 0;
@@ -115,6 +127,8 @@ body:not(.dark) #bg-canvas {
 
 .center-block {
     background: rgba(27, 29, 35, 0.85);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     position: relative;
     padding: 2em;
     border-radius: 20px;
@@ -127,15 +141,36 @@ body:not(.dark) #bg-canvas {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: background 0.4s, box-shadow 0.4s, color 0.4s, height 0.5s ease;
+    transition: background 0.4s, box-shadow 0.4s, color 0.4s;
+}
+
+body:not(.dark) {
+    --bg-light: #E9ECEF;
+    --accent: #E6A43C;
+    --accent-hover: #F0B85A;
 }
 
 body:not(.dark) .center-block {
-    background: rgba(245, 246, 247, 0.85);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: rgba(233, 236, 239, 0.85);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     color: var(--text-dark);
 }
 
+body:not(.dark) .disabled {
+    color: #8a8f95 !important;
+    background: repeating-linear-gradient(135deg,
+            rgba(0, 0, 0, 0.05) 0,
+            rgba(0, 0, 0, 0.05) 4px,
+            transparent 4px,
+            transparent 12px) !important;
+}
+
+body:not(.dark) .disabled::after {
+    background: #00adb5;
+    color: #1B1D23;
+}
+
+/* === ТАБЫ === */
 .tabs {
     display: flex;
     justify-content: center;
@@ -159,8 +194,9 @@ body:not(.dark) .center-block {
     transition: all 0.3s ease;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transform: rotate(0deg);
+    backface-visibility: hidden;
+    will-change: transform;
 }
-
 
 .tab-btn img {
     width: 22px;
@@ -174,7 +210,6 @@ body:not(.dark) .center-block {
 
 .tab-btn.active {
     background: var(--accent-hover);
-    background: var(--accent-hover);
     transform: rotate(-5deg) scale(1.05);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
@@ -185,12 +220,14 @@ body:not(.dark) .center-block {
     box-shadow: 0 0 15px rgba(255, 184, 76, 0.6);
 }
 
+/* === УПРАВЛЕНИЕ (ТЕМА / ЯЗЫК) === */
 .controls {
     position: absolute;
     top: 1em;
     right: 1em;
     display: flex;
     gap: 0.5em;
+    z-index: 10;
 }
 
 .controls button {
@@ -220,6 +257,7 @@ body:not(.dark) .center-block {
     box-shadow: 0 0 15px rgba(255, 184, 76, 0.6);
 }
 
+/* === ВЫБОР ЯЗЫКА === */
 .lang-selector {
     position: relative;
     display: inline-block;
@@ -257,17 +295,19 @@ body:not(.dark) .center-block {
     box-shadow: 0 0 15px rgba(255, 184, 76, 0.6);
     z-index: 100;
     overflow: hidden;
-    display: none;
+    visibility: hidden;
     opacity: 0;
     transform: translateY(0);
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+    pointer-events: none;
 }
 
 .lang-menu.show {
-    display: flex;
+    visibility: visible;
     opacity: 1;
+    transition: opacity 0.3s ease, visibility 0s 0s;
+    pointer-events: auto;
 }
-
 
 .lang-menu li {
     cursor: pointer;
@@ -280,7 +320,6 @@ body:not(.dark) .center-block {
 
 .lang-menu li:hover {
     transform: scale(1.1) rotate(-10deg);
-    /*background: var(--accent-hover);*/
 }
 
 .lang-menu li img {
@@ -288,10 +327,9 @@ body:not(.dark) .center-block {
     height: 24px;
 }
 
-
+/* === СОДЕРЖИМОЕ ВКЛАДОК === */
 .tab-wrapper {
     width: 100%;
-    transition: height 0.5s ease;
 }
 
 .tab-content {
@@ -305,6 +343,7 @@ body:not(.dark) .center-block {
     opacity: 1;
 }
 
+/* === О СЕБЕ === */
 .about-section {
     display: flex;
     flex-wrap: wrap;
@@ -332,7 +371,6 @@ body:not(.dark) .center-block {
     box-shadow: 0 0 15px rgba(255, 184, 76, 0.5);
 }
 
-
 .thought-bubble {
     position: absolute;
     top: -10px;
@@ -353,6 +391,25 @@ body.dark .thought-bubble {
     color: var(--text-light);
 }
 
+.thought-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--bg-light);
+    box-shadow: none;
+    border-radius: 0;
+    background: transparent;
+}
+
+body.dark .thought-bubble::after {
+    border-top-color: var(--bg-dark);
+}
+
 @keyframes floatBubble {
 
     0%,
@@ -364,19 +421,6 @@ body.dark .thought-bubble {
         transform: translateY(-5px) rotate(-5deg);
     }
 }
-
-.thought-bubble::after {
-    content: '';
-    position: absolute;
-    bottom: -6px;
-    right: 12px;
-    width: 8px;
-    height: 8px;
-    background: inherit;
-    border-radius: 50%;
-    box-shadow: -6px 6px 0 0 inherit;
-}
-
 
 .about-text {
     max-width: 400px;
@@ -402,7 +446,7 @@ body.dark .thought-bubble {
 }
 
 .mini-project {
-    background: var(--card-bg);
+    background: var(--card-bg, transparent);
     border-radius: 1em;
     overflow: hidden;
     width: 280px;
@@ -437,11 +481,13 @@ body.dark .thought-bubble {
     opacity: 0.85;
 }
 
-
+/* === СОЦИАЛЬНЫЕ КНОПКИ === */
 .socials {
     display: flex;
     gap: 1em;
     margin-top: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .social-btn {
@@ -454,20 +500,8 @@ body.dark .thought-bubble {
     border-radius: 10px;
     font-weight: 600;
     text-decoration: none;
-    transition: 0.3s;
+    transition: all 0.3s ease;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.social-btn:hover {
-    transform: scale(1.05);
-    background: var(--accent-hover);
-    box-shadow: 0 0 15px rgba(255, 184, 76, 0.5);
-}
-
-.social-btn:hover {
-    transform: scale(1.1) rotate(2deg);
-    background: var(--accent-hover);
-    box-shadow: 0 0 15px rgba(255, 184, 76, 0.6);
 }
 
 .social-btn img {
@@ -475,6 +509,13 @@ body.dark .thought-bubble {
     height: 18px;
 }
 
+.social-btn:hover {
+    transform: scale(1.05) rotate(2deg);
+    background: var(--accent-hover);
+    box-shadow: 0 0 15px rgba(255, 184, 76, 0.6);
+}
+
+/* === ПРОЕКТЫ (СЕТКА) === */
 .project-grid {
     display: flex;
     flex-wrap: wrap;
@@ -486,15 +527,14 @@ body.dark .thought-bubble {
 .project-card {
     flex: 1 1 250px;
     max-width: 250px;
-    border: 2px solid var(--accent);
     border-radius: 12px;
     overflow: hidden;
-    transition: 0.3s;
+    transition: all 0.3s ease;
     background: transparent;
     box-sizing: border-box;
-
     display: flex;
     flex-direction: column;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .project-card.highlight {
@@ -506,12 +546,12 @@ body.dark .thought-bubble {
 .project-card:hover {
     transform: translateY(-3px) scale(1.02);
     border-color: var(--accent-hover);
-    box-shadow: 0 8px 20px rgba(255, 184, 76, 0.3);
+    box-shadow: 0 0 20px rgba(255, 184, 76, 0.3);
 }
 
-
 .project-card img {
-    width: auto;
+    width: 100%;
+    height: auto;
     object-fit: cover;
     border-bottom: 0px solid var(--accent);
 }
@@ -519,7 +559,6 @@ body.dark .thought-bubble {
 .project-info {
     padding: 0.5em 1em;
     text-align: left;
-
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -552,6 +591,15 @@ body.dark .thought-bubble {
     height: 16px;
 }
 
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5em;
+    margin-top: auto;
+}
+
+/* === КНОПКИ ПРОЕКТОВ (project-btn) === */
 .project-btn {
     display: flex;
     align-items: center;
@@ -564,8 +612,9 @@ body.dark .thought-bubble {
     font-weight: 600;
     cursor: pointer;
     border: none;
-    transition: 0.3s;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    will-change: transform;
 }
 
 .project-btn img {
@@ -574,31 +623,24 @@ body.dark .thought-bubble {
 }
 
 .project-btn:hover {
-    transform: none;
+    transform: scale(1.05);
     background: var(--accent-hover);
     box-shadow: 0 0 15px rgba(255, 184, 76, 0.6);
 }
 
-.button-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5em;
-    margin-top: auto;
+/* Убираем тултипы у кнопок проектов */
+.project-btn.disabled::after {
+    display: none !important;
+    content: none !important;
 }
 
-/*.button-row button {
-    flex: 0 1 auto;     
-    min-width: 60px;      
-  }*/
-
-
+/* === КОНТАКТЫ === */
 .contact-socials {
     display: flex;
     gap: 15px;
     margin-bottom: 20px;
+    justify-content: center;
 }
-
 
 .contact-form {
     display: flex;
@@ -669,6 +711,7 @@ body:not(.dark) .contact-form ::placeholder {
     box-shadow: 0 8px 20px rgba(255, 184, 76, 0.5);
 }
 
+/* === ФУТЕР === */
 footer {
     text-align: center;
     padding: 1em 0;
@@ -677,79 +720,82 @@ footer {
     margin-top: 2em;
 }
 
+/* === DISABLED СТИЛИ === */
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .disabled {
-    color: var(--text-disabled);
+    position: relative;
+    color: var(--text-disabled) !important;
     background: repeating-linear-gradient(135deg,
             rgba(255, 255, 255, 0.1) 0,
             rgba(255, 255, 255, 0.1) 4px,
             transparent 4px,
-            transparent 12px);
+            transparent 12px) !important;
+    cursor: not-allowed !important;
+    pointer-events: auto !important;
+    /* для отображения тултипа */
 }
 
+/* Табы disabled не кликаются (приоритет) */
 .tab-btn.disabled {
+    pointer-events: none !important;
     cursor: not-allowed;
-    pointer-events: none;
 }
-
-
 
 .disabled img {
     filter: brightness(0) invert(0.7);
 }
 
+/* Соцкнопки disabled: оставляем pointer-events: auto (для тултипа) */
+.social-btn.disabled {
+    pointer-events: auto !important;
+}
+
 .social-btn.disabled:hover {
-    /*color: var(--text-dark);*/
+    /*transform: none !important;*/
     background: repeating-linear-gradient(135deg,
             rgba(255, 255, 255, 0.1) 0,
             rgba(255, 255, 255, 0.1) 4px,
             transparent 4px,
-            transparent 12px);
+            transparent 12px) !important;
+    box-shadow: 0 0 10px rgba(0, 173, 181, 0.2);
 }
 
+/* Тултип для disabled элементов */
 .disabled::after {
     content: attr(title);
     position: absolute;
     bottom: 120%;
     left: 50%;
     transform: translateX(-50%);
-    background: #00adb5;
-    color: #222831;
+    background: rgb(0, 173, 181);
+    color: var(--text-dark);
     padding: 4px 8px;
     border-radius: 6px;
     font-size: 12px;
     white-space: nowrap;
-    pointer-events: auto;
-    opacity: 0;
     pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+    z-index: 200;
 }
 
 .disabled:hover::after {
     opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0s 0s;
 }
 
-
 /* === АДАПТИВНАЯ ВЁРСТКА === */
-/* Планшеты и меньше */
 @media (max-width: 1024px) {
     .center-block {
         width: 90%;
         padding: 1.5em;
         margin: 5vh auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .about-section {
-        gap: 1.5em;
-        justify-content: center;
     }
 
     .profile-photo {
@@ -763,7 +809,6 @@ footer {
 
     .tabs {
         gap: 0.8em;
-        justify-content: center;
     }
 
     .tab-btn {
@@ -772,7 +817,6 @@ footer {
     }
 }
 
-/* Телефоны 768px и меньше */
 @media (max-width: 768px) {
     .about-section {
         flex-direction: column;
@@ -793,12 +837,10 @@ footer {
     .mini-projects {
         flex-direction: column;
         align-items: center;
-        justify-content: center;
     }
 
     .mini-project {
         width: auto;
-        height: 90%;
         max-width: 340px;
     }
 
@@ -814,26 +856,17 @@ footer {
     .tabs {
         justify-content: center;
     }
+
+    .thought-bubble {
+        left: -30px;
+    }
 }
 
-/* Маленькие телефоны 480px и меньше */
 @media (max-width: 480px) {
     .center-block {
         width: 95%;
         padding: 1em;
         min-height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .about-section {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        gap: 1em;
     }
 
     .profile-photo {
@@ -849,18 +882,12 @@ footer {
         font-size: 0.95em;
     }
 
-    .mini-projects {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
     .mini-project {
         width: 95%;
     }
 
     .mini-project img {
-        height: 10%;
+        height: auto;
     }
 
     .mini-info h4 {
@@ -882,6 +909,11 @@ footer {
 
     .tabs {
         gap: 0.5em;
-        justify-content: center;
+    }
+
+    .thought-bubble {
+        font-size: 0.8em;
+        padding: 6px 8px;
+        left: -20px;
     }
 }
