@@ -1,67 +1,23 @@
 <!DOCTYPE html>
-<html lang="ru">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="cache-control" content="no-cache" />
-    <meta name="color-scheme" content="light dark">
-    <title>Ilynn. Me. Dev.</title>
-    <link rel="icon" type="image/svg+xml" href="img/icon/ilynn.svg" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@500&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Nothing Here Yet</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232A2A36'/%3E%3Crect x='15' y='15' width='70' height='70' rx='10' fill='none' stroke='%23ffffff' stroke-width='4' opacity='0.4'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="style.css" />
 </head>
+<body>
+    <div class="bg-canvas"></div>
 
-<body class="dark">
-    <div id="preloader">
-        <div class="loader">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
+    <main class="content" role="main" aria-label="Placeholder">
+        <div class="loader-wrapper" aria-hidden="true">
+            <div class="loader" id="loader"></div>
         </div>
-    </div>
-    <canvas id="bg-canvas"></canvas>
+        <h1>nothing here yet</h1>
+        <span class="sub">loading &bull; placeholder</span>
+    </main>
 
-    <div class="wrapper">
-        <div class="center-block">
-            <div class="controls">
-                <button id="theme-toggle"><img src="img/icon/sun.svg" alt="theme" /></button>
-                <div class="lang-selector">
-                    <button button id="lang-toggle" class="lang-toggle">
-                        <img src="img/icon/lang.svg" alt="EN" />
-                    </button>
-                    <ul class="lang-menu">
-                        <li data-lang="en"><img src="img/icon/en.svg" alt="EN" /></li>
-                        <li data-lang="ru"><img src="img/icon/ru.svg" alt="RU" /></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="tabs" id="tabs"></div>
-            <main class="main">
-                <div class="tab-wrapper" id="tab-wrapper">
-                </div>
-            </main>
-        </div>
-
-        <footer>
-            <p id="copyright">
-                <span class="copyright-text">©</span>
-                <span id="current-year">2025</span>
-                <span id="copyright-text">Ilynn. All rights reserved.</span>
-            </p>
-        </footer>
-    </div>
-
-    <script src="js/bg.js"></script>
-    <script src="js/content.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/lang.js"></script>
-
+    <script src="script.js"></script>
 </body>
-
 </html>
