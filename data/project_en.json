@@ -223,6 +223,34 @@
                         "hidden": true
                     }
                 ]
+            },
+            {
+                "id": "g9",
+                "title": "Ember Glyph",
+                "desc": "An ancient mystical duel",
+                "image": "/img/projects/games/ember-glyph.png",
+                "projectLink": [
+                    {
+                        "nid": "play",
+                        "link": "https://ilynn.itch.io/ember-glyph"
+                    },
+                    {
+                        "nid": "source",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "download",
+                        "link": "#",
+                        "hidden": true
+                    },
+                    {
+                        "nid": "itch",
+                        "link": "https://ilynn.itch.io/ember-glyph",
+                        "disabled": true,
+                        "hidden": true
+                    }
+                ]
             }
         ]
     }

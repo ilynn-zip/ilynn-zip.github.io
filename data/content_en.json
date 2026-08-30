@@ -44,18 +44,18 @@
     "featuredTitle": "Recents",
     "featured": [
       {
-        "id": "g7",
-        "title": "Golden Cave (minijam 202)",
-        "desc": "Protect your treasure as a mighty dragon!",
-        "image": "/img/projects/games/goldencave.png",
-        "link": "https://ilynn.itch.io/golden-cave"
-      },
-      {
         "id": "g8",
         "title": "resume",
         "desc": "I'm tired",
         "image": "/img/projects/games/resume.png",
         "link": "https://ilynn.itch.io/resume"
+      },
+      {
+        "id": "g9",
+        "title": "Ember Glyph",
+        "desc": "An ancient mystical duel",
+        "image": "/img/projects/games/ember-glyph.png",
+        "link": "https://ilynn.itch.io/ember-glyph"
       }
     ]
   },

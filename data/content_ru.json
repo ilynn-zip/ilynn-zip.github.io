@@ -45,18 +45,18 @@
     "featuredTitle": "Из недавнего",
     "featured": [
       {
-        "id": "g7",
-        "title": "Golden Cave (minijam 202)",
-        "desc": "Защити свои сокровища в роли могучего дракона!",
-        "image": "/img/projects/games/goldencave.png",
-        "link": "https://ilynn.itch.io/golden-cave"
-      },
-      {
         "id": "g8",
         "title": "resume",
         "desc": "Я устал",
         "image": "/img/projects/games/resume.png",
         "link": "https://ilynn.itch.io/resume"
+      },
+      {
+        "id": "g9",
+        "title": "Ember Glyph",
+        "desc": "Древняя мистическая дуэль",
+        "image": "/img/projects/games/ember-glyph.png",
+        "link": "https://ilynn.itch.io/ember-glyph"
       }
     ]
   },
