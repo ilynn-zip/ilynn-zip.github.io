@@ -309,9 +309,12 @@
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(function () {
         isMobile = window.matchMedia('(max-width: 900px)').matches;
-        var target = isMobile ? panels[current].offsetTop : panels[current].offsetLeft;
-        if (isMobile) window.scrollTo({ top: target, behavior: 'auto' });
-        else track.scrollTo({ left: target, behavior: 'auto' });
+
+        if (!isMobile) {
+          var target = panels[current].offsetLeft;
+          track.scrollTo({ left: target, behavior: 'auto' });
+        }
+
         updateUI();
         if (wms.length) fitWatermarks();
       }, 120);
