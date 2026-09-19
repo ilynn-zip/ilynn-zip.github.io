@@ -2735,9 +2735,11 @@ a {
     position: relative;
     flex-direction: column;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: visible;
     height: auto;
-    scroll-snap-type: y mandatory
+    scroll-snap-type: none;
+    overscroll-behavior-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .panel {
@@ -2745,7 +2747,8 @@ a {
     height: auto;
     min-height: calc(100vh - var(--nav-h));
     min-height: calc(100dvh - var(--nav-h));
-    padding: 22px 18px 32px
+    padding: 22px 18px 32px;
+    scroll-snap-align: none;
   }
 
   .panel__wm {

@@ -275,8 +275,9 @@
       if (idx !== current) { current = idx; updateUI(); }
     }
 
-    track.addEventListener('scroll', function () { if (!animating) syncFromScroll(); }, { passive: true });
-    window.addEventListener('scroll', function () { if (isMobile && !animating) syncFromScroll(); }, { passive: true });
+    track.addEventListener('scroll', function () {
+      if (!isMobile && !animating) syncFromScroll();
+    }, { passive: true });
 
     document.querySelectorAll('[data-go]').forEach(function (a) {
       a.addEventListener('click', function (e) {
