@@ -1,66 +1,280 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="dark">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="cache-control" content="no-cache" />
-    <meta name="color-scheme" content="light dark">
-    <title>Ilynn. Me. Dev.</title>
-    <link rel="icon" type="image/svg+xml" href="img/icon/ilynn.svg" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@500&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ilynn. Me. Dev.</title>
+  <link rel="icon" type="image/svg+xml" href="assets/ilynn.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 </head>
 
-<body class="dark">
-    <div id="preloader">
-        <div class="loader">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
-    </div>
-    <canvas id="bg-canvas"></canvas>
+<body>
 
-    <div class="wrapper">
-        <div class="center-block">
-            <div class="controls">
-                <button id="theme-toggle"><img src="img/icon/sun.svg" alt="theme" /></button>
-                <div class="lang-selector">
-                    <button button id="lang-toggle" class="lang-toggle">
-                        <img src="img/icon/lang.svg" alt="EN" />
-                    </button>
-                    <ul class="lang-menu">
-                        <li data-lang="en"><img src="img/icon/en.svg" alt="EN" /></li>
-                        <li data-lang="ru"><img src="img/icon/ru.svg" alt="RU" /></li>
-                    </ul>
-                </div>
+  <div class="bg-decor" aria-hidden="true">
+    <div class="bg-decor__base"></div>
+    <div class="bg-decor__film"></div>
+  </div>
+
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__mark">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <header class="topnav">
+    <div class="topnav__brand">
+      <span class="glyph"></span>
+      <span class="txt" data-content="nav.brand">Ilynn</span>
+    </div>
+    <div class="topnav__rail">
+      <div class="topnav__rail-fill" id="railFill"></div>
+      <nav class="topnav__items" id="navItems" aria-label="Разделы"></nav>
+    </div>
+    <div class="topnav__right">
+      <div class="topnav__status">
+        <span class="dot"></span>
+        <span class="txt" data-content="nav.status">Открыт для проектов</span>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4" />
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+        </svg>
+      </button>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button class="lang-toggle__btn" type="button" data-lang="ru" aria-pressed="false">RU</button>
+        <button class="lang-toggle__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+
+  </header>
+
+  <main class="track" id="track">
+
+    <!-- 01 HERO -->
+    <section class="panel panel--neutral" data-nav="Интро" data-nav-key="nav.intro">
+      <span class="panel__wm" data-wm>Intro</span>
+      <div class="panel__head mono">
+        <span data-content-html="intro.panel.left">Интро</span>
+        <span data-content-html="intro.panel.right"><span class="accent">01</span> <span class="slash">/</span>
+          05</span>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero__photo-wrap">
+          <div class="hero__photo" title="Ilynn">
+            <div class="hero__photo__frame">
+              <img src="assets/ilynn.png" alt="Ilynn">
             </div>
+          </div>
 
-            <div class="tabs" id="tabs"></div>
-            <main class="main">
-                <div class="tab-wrapper" id="tab-wrapper">
-                </div>
-            </main>
+          <div class="thoughts" id="thoughts" aria-live="polite"></div>
         </div>
 
-        <footer>
-            <p id="copyright">
-                <span class="copyright-text">©</span>
-                <span id="current-year">2025</span>
-                <span id="copyright-text">Ilynn. All rights reserved.</span>
-            </p>
-        </footer>
-    </div>
+        <div class="hero__text">
+          <div class="hero__block-top">
+            <h1 class="glitch-title">
+              <span data-content="intro.name.first">Виктор</span><br>
+              <em data-text="Ilynn" data-content="intro.name.last">Ilynn</em>
+            </h1>
+            <p class="lede" data-content-html="intro.lede">Это моя игровая лаборатория. Здесь я создаю миры, изобретаю механику и экспериментирую с визуалом. Просто потому что могу и люблю это делать.</p>
+          </div>
 
-    <script src="js/bg.js"></script>
-    <script src="js/content.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/lang.js"></script>
+          <dl class="meta">
+            <div>
+              <dt data-content="intro.meta.role.label">Роль</dt>
+              <dd data-content-html="intro.meta.role.value"><em>Lead</em> Game Designer</dd>
+            </div>
+            <div>
+              <dt data-content="intro.meta.location.label">Локация</dt>
+              <dd data-content="intro.meta.location.value">Москва · удалённо</dd>
+            </div>
+            <div>
+              <dt data-content="intro.meta.exp.label">Опыт</dt>
+              <dd data-content="intro.meta.exp.value">-</dd>
+            </div>
+            <div>
+              <dt data-content="intro.meta.status.label">Статус</dt>
+              <dd data-content="intro.meta.status.value">Открыт для проектов</dd>
+            </div>
+          </dl>
+
+          <div class="actions">
+            <a class="btn btn--primary" href="#" data-go="2">
+              <span class="btn__inner">
+                <span class="btn__diamond"><span></span></span>
+                <span class="btn__label" data-content="intro.btn.primary">Смотреть работы</span>
+                <span class="btn__ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M13 5l7 7-7 7" />
+                  </svg></span>
+              </span>
+            </a>
+            <a class="btn" href="#" data-go="4">
+              <span class="btn__inner">
+                <span class="btn__diamond"><span></span></span>
+                <span class="btn__label" data-content="intro.btn.secondary">Написать</span>
+                <span class="btn__ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 17L17 7M7 7h10v10" />
+                  </svg></span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 PROFILE -->
+    <section class="panel panel--amber" data-nav="Профиль" data-nav-key="nav.profile">
+      <span class="panel__wm" data-wm>Profile</span>
+      <div class="panel__head mono">
+        <span data-content-html="profile.panel.left">02 <span class="slash">/</span> Профиль и навыки</span>
+        <span data-content="profile.panel.right">Кто я и что умею</span>
+      </div>
+
+      <h2 class="glitch-title" data-content-html="profile.title"
+        style="font-size:clamp(1.4rem,2.6vw,2.2rem);margin-bottom:clamp(10px,1.6vh,18px)">
+        Проектирую <em data-text="ощущения">ощущения</em>
+      </h2>
+
+      <div class="ps-grid">
+        <div class="ps-profile">
+          <div class="ps-profile__body" data-content-html="profile.body">
+            <p>Здесь должно быть <b>что-то</b> умное, но я ничего не придумал.</p>
+          </div>
+          <dl class="ps-profile__meta">
+            <div>
+              <dt data-content="profile.spec.label">Специализация</dt>
+              <dd data-content="profile.spec.value">Системы · экономика · баланс</dd>
+            </div>
+            <div>
+              <dt data-content="profile.engines.label">Движки</dt>
+              <dd data-content="profile.engines.value">Unity · Unreal · Godot</dd>
+            </div>
+            <div>
+              <dt data-content="profile.tools.label">Инструменты</dt>
+              <dd data-content="profile.tools.value">Figma · Miro · Notion</dd>
+            </div>
+            <div>
+              <dt data-content="profile.langs.label">Языки</dt>
+              <dd data-content="profile.langs.value">RU · EN (C1)</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="ps-skills">
+          <div class="ps-skills__head">
+            <h3 data-content="profile.skills.title">Инвентарь</h3>
+            <span>—</span>
+          </div>
+          <ul class="skills-grid" id="skillsGrid"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 PROJECTS -->
+    <section class="panel panel--coral" id="work" data-nav="Работы" data-nav-key="nav.work">
+      <span class="panel__wm" data-wm>Work</span>
+      <div class="panel__head mono">
+        <span data-content-html="work.panel.left">Работы</span>
+        <span id="workCounter"></span>
+      </div>
+
+      <h2 class="glitch-title" data-content-html="work.title"
+        style="font-size:clamp(1.3rem,2vw,1.8rem);margin-bottom:clamp(14px,2vh,20px)">Работы</h2>
+
+      <div class="project-grid"></div>
+    </section>
+
+    <!-- 04 PATH -->
+    <section class="panel panel--violet" data-nav="Путь" data-nav-key="nav.path">
+      <span class="panel__wm" data-wm>Path</span>
+      <div class="panel__head mono">
+        <span data-content-html="path.panel.left">04 <span class="slash">/</span> Путь</span>
+        <span data-content="path.panel.right">Это что-то невероятное</span>
+      </div>
+      <h2 class="glitch-title" data-content-html="path.title" style="font-size:clamp(1.3rem,2vw,1.8rem);margin-bottom:0">
+        Хроника</h2>
+
+      <div class="path-map">
+        <div class="path-map__rail"><span class="path-map__pulse"></span></div>
+        <div class="path-nodes"></div>
+      </div>
+    </section>
+
+    <!-- 05 CONTACT -->
+    <section class="panel panel--neutral" id="contact" data-nav="Контакт" data-nav-key="nav.contact">
+      <span class="panel__wm" data-wm>Contact</span>
+      <div class="panel__head mono">
+        <span data-content-html="contact.panel.left">05 <span class="slash">/</span> Контакт</span>
+        <span data-content="contact.panel.right">Отвечаю в течение дня</span>
+      </div>
+      <h2 class="glitch-title" data-content-html="contact.title"
+        style="font-size:clamp(1.4rem,2.6vw,2.2rem);margin-bottom:clamp(10px,1.6vh,18px)">
+        Давайте <em data-text="подсказывайте">думать</em>
+      </h2>
+
+      <div class="contact-wrap">
+        <div class="contact__top">
+          <div>
+            <p class="lede" data-content="contact.lede" style="max-width:48ch;margin-bottom:18px">Найти меня можно здесь.</p>
+            <a class="email" href="mailto:vch.dot@gmail.com" data-content="contact.email" data-href-key="contact.email"
+              data-href-prefix="mailto:">vch.dot@gmail.com</a>
+          </div>
+          <div class="contact__status">
+            <div class="contact__status-row">
+              <span class="pulse"></span>
+              <span data-content="contact.status.row1">Открыт для проектов</span>
+            </div>
+            <div class="contact__clock" id="localClock">--:--<span>MSK</span></div>
+            <div class="contact__status-row" style="justify-content:flex-end">
+              <span data-content="contact.status.row2">Отвечаю в течение 24 часов</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact__bottom">
+          <div class="contact__grid" id="contactsGrid"></div>
+
+          <div class="contact__foot">
+            <span data-content-html="footer.copyright">© 2026 · <b>Ilynn</b></span>
+            <span data-content-html="footer.location">Москва · <span class="accent">UTC+3</span></span>
+            <span data-content="footer.note">Meh, good enough</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="progress">
+    <div class="progress__fill" id="progressFill"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/content.js"></script>
+  <script src="js/projects-render.js"></script>
+  <script src="js/script.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', initHomePage);
+  </script>
 
 </body>
 
