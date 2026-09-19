@@ -91,7 +91,8 @@
               <span data-content="intro.name.first">Виктор</span><br>
               <em data-text="Ilynn" data-content="intro.name.last">Ilynn</em>
             </h1>
-            <p class="lede" data-content-html="intro.lede">Это моя игровая лаборатория. Здесь я создаю миры, изобретаю механику и экспериментирую с визуалом. Просто потому что могу и люблю это делать.</p>
+            <p class="lede" data-content-html="intro.lede">Это моя игровая лаборатория. Здесь я создаю миры, изобретаю
+              механику и экспериментирую с визуалом. Просто потому что могу и люблю это делать.</p>
           </div>
 
           <dl class="meta">
@@ -208,7 +209,8 @@
         <span data-content-html="path.panel.left">04 <span class="slash">/</span> Путь</span>
         <span data-content="path.panel.right">Это что-то невероятное</span>
       </div>
-      <h2 class="glitch-title" data-content-html="path.title" style="font-size:clamp(1.3rem,2vw,1.8rem);margin-bottom:0">
+      <h2 class="glitch-title" data-content-html="path.title"
+        style="font-size:clamp(1.3rem,2vw,1.8rem);margin-bottom:0">
         Хроника</h2>
 
       <div class="path-map">
@@ -232,7 +234,8 @@
       <div class="contact-wrap">
         <div class="contact__top">
           <div>
-            <p class="lede" data-content="contact.lede" style="max-width:48ch;margin-bottom:18px">Найти меня можно здесь.</p>
+            <p class="lede" data-content="contact.lede" style="max-width:48ch;margin-bottom:18px">Найти меня можно
+              здесь.</p>
             <a class="email" href="mailto:vch.dot@gmail.com" data-content="contact.email" data-href-key="contact.email"
               data-href-prefix="mailto:">vch.dot@gmail.com</a>
           </div>
@@ -273,7 +276,13 @@
   <script src="js/script.js" defer></script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', initHomePage);
+    (function () {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initHomePage);
+      } else {
+        initHomePage();
+      }
+    })();
   </script>
 
 </body>

@@ -79,7 +79,8 @@
           <span id="catalogMetaRight"></span>
         </div>
         <h1 class="proj-hero__title" data-content-html="catalog.title">Все <em data-text="проекты">проекты</em></h1>
-        <p class="proj-hero__lede" data-content-html="catalog.lede">Здесь то, что доделал до конца, <b>ну почти...</b></p>
+        <p class="proj-hero__lede" data-content-html="catalog.lede">Здесь то, что доделал до конца, <b>ну почти...</b>
+        </p>
       </div>
 
       <div class="projects-grid" id="projectsGrid"></div>
@@ -102,7 +103,13 @@
   <script src="/js/script.js" defer></script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', initProjectsPage);
+    (function () {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initProjectsPage);
+      } else {
+        initProjectsPage();
+      }
+    })();
   </script>
 
 </body>
