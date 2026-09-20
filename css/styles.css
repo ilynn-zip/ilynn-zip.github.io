@@ -2041,9 +2041,7 @@ a {
   border-color: color-mix(in srgb, var(--accent) 40%, var(--rule));
 }
 
-.skill--featured .skill__mark::before {
-  border-color: var(--accent);
-}
+/*.skill--featured .skill__mark::before {}*/
 
 .skill--featured .skill__mark::after {
   background: transparent;
@@ -2715,6 +2713,56 @@ a {
   background: var(--accent-2);
 }
 
+/* ============================================================
+   СТРЕЛКИ НАВИГАЦИИ
+   ============================================================ */
+.nav-arrow {
+  display: none;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  border-radius: 0%;
+  position: relative;
+  transition: color .35s ease, background .35s ease,
+    transform .35s cubic-bezier(.2, .8, .3, 1);
+}
+
+.nav-arrow svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  transition: transform .35s cubic-bezier(.2, .8, .3, 1);
+}
+
+.nav-arrow:hover,
+.nav-arrow:focus-visible {
+  color: var(--accent-text);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+.nav-arrow--prev:hover svg {
+  transform: translateX(-2px)
+}
+
+.nav-arrow--next:hover svg {
+  transform: translateX(2px)
+}
+
+.nav-arrow:active {
+  transform: scale(.92);
+}
+
+.nav-arrow[disabled] {
+  opacity: .2;
+  pointer-events: none;
+}
 
 
 /* ============================================================
@@ -3106,17 +3154,62 @@ a {
     font-size: 9px
   }
 
-  .nav-item__label {
+  /* Мобильная навигация: один ромб + стрелки */
+  .topnav__rail::before,
+  .topnav__rail::after,
+  .topnav__rail-fill {
     display: none
   }
 
-  .nav-item {
-    min-width: 32px
+  .topnav__rail {
+    justify-content: space-between;
+    padding: 0 4px;
+    gap: 8px;
+  }
+
+  .topnav__items {
+    flex: 1;
+    justify-content: center;
+    width: auto;
+  }
+
+  .nav-arrow {
+    display: inline-flex;
+  }
+
+  /* Скрываем все ромбы кроме активного */
+  .topnav__items .nav-item {
+    display: none;
+    min-width: auto;
+    padding: 0 6px;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .topnav__items .nav-item.is-active {
+    display: flex;
   }
 
   .nav-item__node {
-    width: 8px;
-    height: 8px
+    width: 14px;
+    height: 14px;
+    border-width: 1.5px;
+  }
+
+  .nav-item.is-active .nav-item__node {
+    transform: rotate(45deg) scale(1);
+  }
+
+  /* Подпись активного — под ромбом */
+  .nav-item__label {
+    display: block;
+    position: static;
+    transform: none;
+    opacity: 1;
+    font-size: 9px;
+    letter-spacing: .16em;
+    color: var(--accent-text);
+    white-space: nowrap;
   }
 
   .theme-toggle {

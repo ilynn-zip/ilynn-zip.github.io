@@ -244,6 +244,23 @@
 
     var navItems = Array.prototype.slice.call(navItemsEl.children);
 
+    var prevBtn = document.createElement('button');
+    prevBtn.className = 'nav-arrow nav-arrow--prev';
+    prevBtn.type = 'button';
+    prevBtn.setAttribute('aria-label', 'previous');
+    prevBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>';
+    prevBtn.addEventListener('click', function () { goTo(current - 1); });
+
+    var nextBtn = document.createElement('button');
+    nextBtn.className = 'nav-arrow nav-arrow--next';
+    nextBtn.type = 'button';
+    nextBtn.setAttribute('aria-label', 'next');
+    nextBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>';
+    nextBtn.addEventListener('click', function () { goTo(current + 1); });
+
+    navItemsEl.parentNode.insertBefore(prevBtn, navItemsEl);
+    navItemsEl.parentNode.appendChild(nextBtn);
+
     function goTo(n) {
       n = Math.max(0, Math.min(panels.length - 1, n));
       if (n === current) return;
@@ -264,19 +281,36 @@
       navItems.forEach(function (item, i) {
         item.classList.toggle('is-active', i === current);
       });
+      if (prevBtn) prevBtn.disabled = (current === 0);
+      if (nextBtn) nextBtn.disabled = (current === panels.length - 1);
     }
 
     function syncFromScroll() {
-      var pos, size;
-      if (isMobile) { pos = window.scrollY; size = window.innerHeight; }
-      else { pos = track.scrollLeft; size = track.clientWidth; }
-      var idx = Math.round(pos / size);
+      var idx = current;
+
+      if (isMobile) {
+        var scrollY = window.scrollY + window.innerHeight * 0.4;
+        for (var i = 0; i < panels.length; i++) {
+          var rect = panels[i].getBoundingClientRect();
+          var top = rect.top + window.scrollY;
+          var bottom = top + rect.height;
+          if (scrollY >= top && scrollY < bottom) { idx = i; break; }
+        }
+      } else {
+        var pos = track.scrollLeft;
+        var size = track.clientWidth;
+        idx = Math.round(pos / size);
+      }
+
       idx = Math.max(0, Math.min(panels.length - 1, idx));
       if (idx !== current) { current = idx; updateUI(); }
     }
 
     track.addEventListener('scroll', function () {
-      if (!isMobile && !animating) syncFromScroll();
+      if (!animating) syncFromScroll();
+    }, { passive: true });
+    window.addEventListener('scroll', function () {
+      if (isMobile && !animating) syncFromScroll();
     }, { passive: true });
 
     document.querySelectorAll('[data-go]').forEach(function (a) {
