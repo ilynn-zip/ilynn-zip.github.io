@@ -186,14 +186,14 @@ a {
 
 .preloader__mark span:nth-child(1) {
   inset: 0;
-  animation: preRotate 4s linear infinite;
+  animation: preRotate 5s linear infinite;
   opacity: .85;
   box-shadow: 0 0 14px -3px color-mix(in srgb, var(--accent) 60%, transparent)
 }
 
 .preloader__mark span:nth-child(2) {
   inset: 16px;
-  animation: preRotate 3s linear infinite reverse;
+  animation: preRotate 4s linear infinite reverse;
   opacity: .5
 }
 
@@ -207,7 +207,7 @@ a {
 
 @keyframes preRotate {
   to {
-    transform: rotate(405deg)
+    transform: rotate(360deg)
   }
 }
 
