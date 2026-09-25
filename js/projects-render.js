@@ -180,6 +180,13 @@ async function initHomePage() {
     renderThoughts('#thoughts', thoughts);
 
     applyContent(content);
+
+    const elapsed = Date.now() - startedAt;
+    const minShow = 800;
+    const wait = Math.max(0, minShow - elapsed);
+    setTimeout(function () {
+        if (typeof hidePreloader === 'function') hidePreloader();
+    }, wait);
 }
 
 async function initProjectsPage() {
@@ -194,6 +201,13 @@ async function initProjectsPage() {
     updateProjectsPageCounters(projects);
 
     applyContent(content);
+
+    const elapsed = Date.now() - startedAt;
+    const minShow = 800;
+    const wait = Math.max(0, minShow - elapsed);
+    setTimeout(function () {
+        if (typeof hidePreloader === 'function') hidePreloader();
+    }, wait);
 }
 
 /* ============================================================

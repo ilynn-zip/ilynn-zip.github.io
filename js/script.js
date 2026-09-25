@@ -5,12 +5,20 @@
      ПРЕЛОАДЕР
      ============================================================ */
   var preloader = document.getElementById('preloader');
-  if (preloader) {
-    setTimeout(function () {
-      preloader.classList.add('is-done');
-      setTimeout(function () { preloader.style.display = 'none'; }, 500);
-    }, 800);
+  function hidePreloader() {
+    if (!preloader) return;
+    preloader.classList.add('is-done');
+    setTimeout(function () { preloader.style.display = 'none'; }, 800);
   }
+
+  window.hidePreloader = hidePreloader;
+
+  setTimeout(function () {
+    if (preloader && !preloader.classList.contains('is-done')) {
+      console.warn('[preloader] timeout');
+      hidePreloader();
+    }
+  }, 8000);
 
   /* ============================================================
      ТЕМА
