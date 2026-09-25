@@ -160,6 +160,7 @@ function updateProjectsPageCounters(projects) {
    ============================================================ */
 
 async function initHomePage() {
+    const startedAt = Date.now();
     const [content, projects, skills, contacts, pathNodes, thoughts] = await Promise.all([
         fetchContent(),
         fetchProjects(),
@@ -190,6 +191,7 @@ async function initHomePage() {
 }
 
 async function initProjectsPage() {
+    const startedAt = Date.now();
     const [content, projects] = await Promise.all([
         fetchContent(),
         fetchProjects()
