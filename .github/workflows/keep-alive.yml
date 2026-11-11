@@ -1,0 +1,31 @@
+name: Keep Alive
+on:
+  schedule:
+    - cron: '0 12 */5 * *'   # каждые 5 дн в 12:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout keepalive branch
+        uses: actions/checkout@v4
+        with:
+          ref: keepalive
+          fetch-depth: 0
+
+      - name: Keep repo alive
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit --allow-empty -m "chore: keepalive $(date -u +%Y-%m-%d)"
+          git push origin keepalive
+
+      - name: Ping Supabase
+        run: |
+          curl -X GET "https://tgunhsnfgnqcgezlqfoz.supabase.co/rest/v1/keepalive?select=*&limit=1" \
+          -H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRndW5oc25mZ25xY2dlemxxZm96Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk3NDE1MzMsImV4cCI6MjEwNTMxNzUzM30.Wk_ARLcA7Cu8T6PJrm3ICFypNo1aY2OnoTTa-HF-yIw" \
+          -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRndW5oc25mZ25xY2dlemxxZm96Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk3NDE1MzMsImV4cCI6MjEwNTMxNzUzM30.Wk_ARLcA7Cu8T6PJrm3ICFypNo1aY2OnoTTa-HF-yIw"
